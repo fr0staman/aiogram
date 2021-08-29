@@ -54,7 +54,7 @@ async def callback_vote_action(query: types.CallbackQuery, callback_data: typing
 
     await bot.edit_message_text(
         f'You voted {callback_data_action}! Now you have {likes_count} vote[s].',
-        query.from_user.id,
+        query.message.chat.id,
         query.message.message_id,
         reply_markup=get_keyboard(),
     )
